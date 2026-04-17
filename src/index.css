@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-yellow: #FBBF24;
+  --color-brand-yellow-light: #FDE68A;
+  --color-brand-yellow-dark: #F59E0B;
+  --color-brand-black: #0F0F0F;
+  --color-brand-black-light: #1A1A1A;
+  --color-brand-black-medium: #2A2A2A;
+  --color-brand-white: #FFFFFF;
+  --color-brand-gray: #9CA3AF;
+  --color-brand-gray-light: #F3F4F6;
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-brand-black);
+  color: var(--color-brand-white);
+}
+
+::selection {
+  background: var(--color-brand-yellow);
+  color: var(--color-brand-black);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.6); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(251, 191, 36, 0.3);
+}
+
+.yellow-glow {
+  box-shadow: 0 0 60px rgba(251, 191, 36, 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #FBBF24, #F59E0B, #FDE68A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-grid {
+  background-image: linear-gradient(rgba(251, 191, 36, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(251, 191, 36, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
