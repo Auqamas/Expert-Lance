@@ -2,21 +2,21 @@ import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: 'Mahdi Ashkanani',
-    role: 'CTO, FinSecure Inc.',
-    content: 'ExpertLance transformed our entire cloud infrastructure in just 6 months. Their team\'s expertise in AWS and security compliance exceeded all expectations. We saw a 40% reduction in operational costs.',
+    name: 'Ayesha Khan',
+    role: 'Frontend Engineer',
+    content: 'The structured roadmap turned my confusion into confidence. I moved from basic HTML to shipping full TypeScript apps in a few months.',
     rating: 5,
   },
   {
-    name: 'Abdullah Alshumais',
-    role: 'Director of Engineering, MedAI',
-    content: 'The AI diagnostics platform they built is nothing short of revolutionary. Their deep understanding of both healthcare compliance and machine learning made them the perfect partner.',
+    name: 'Hamza Ali',
+    role: 'CS Undergraduate',
+    content: 'DSA classes were very practical. I finally understood graphs and dynamic programming because we solved real interview-style problems daily.',
     rating: 5,
   },
   {
-    name: 'Fadek Ashkanani',
-    role: 'VP of Technology, RetailEdge',
-    content: 'Our e-commerce platform now handles 10x the traffic during peak sales. ExpertLance\'s DevOps team set up auto-scaling infrastructure that just works. Zero downtime, every time.',
+    name: 'Sara R.',
+    role: 'Backend Developer',
+    content: 'Mentors reviewed my code line-by-line and taught production practices. That feedback helped me land my first backend internship.',
     rating: 5,
   },
 ];
@@ -31,16 +31,15 @@ export default function Testimonials() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-50 mb-6">
-            <span className="text-sm font-medium text-brand-yellow-dark">Testimonials</span>
+            <span className="text-sm font-medium text-brand-primary">Success Stories</span>
           </div>
           <h2 className="font-heading text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            What Our Clients
+            What Our Learners
             <br />
-            <span className="text-brand-yellow-dark">Say About Us</span>
+            <span className="text-brand-primary">Say About ExpertLance</span>
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Don't just take our word for it. Hear from the businesses
-            we've helped transform.
+            Reviews from learners and developers who leveled up their CS and programming careers.
           </p>
         </div>
 
@@ -57,7 +56,7 @@ export default function Testimonials() {
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-brand-yellow text-brand-yellow" />
+                  <Star key={i} className="w-4 h-4 fill-brand-primary text-brand-primary" />
                 ))}
               </div>
 
@@ -67,16 +66,9 @@ export default function Testimonials() {
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-yellow to-yellow-300 flex items-center justify-center">
-                  <span className="font-heading font-bold text-brand-black text-sm">
-                    {testimonial.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <div>
-                  <div className="font-heading font-semibold text-gray-900 text-md">{testimonial.name}</div>
-                  {/* <div className="text-gray-500 text-xs">{testimonial.role}</div> */}
-                </div>
+              <div className="pt-4 border-t border-gray-100">
+                <div className="font-heading font-semibold text-gray-900 text-lg">{testimonial.name}</div>
+                <div className="text-gray-500 text-sm mt-0.5">{testimonial.role}</div>
               </div>
             </div>
           ))}

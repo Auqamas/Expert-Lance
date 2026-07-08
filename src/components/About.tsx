@@ -1,106 +1,133 @@
-import { CheckCircle2, Users, Award, Zap } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { CheckCircle2, Users, BookOpen, Rocket, Shield, Cpu, CircuitBoard, Database, Globe, Binary } from 'lucide-react';
 
 const highlights = [
-  'ISO 27001 Certified Infrastructure',
-  'AWS & Azure Advanced Partner',
-  '24/7 Global Support Coverage',
-  'Agile & DevOps Methodologies',
-  'SOC 2 Type II Compliant',
-  'Scalable Team Augmentation',
+  'Structured Computer Science curriculum from basics to advanced',
+  'Live coding classes with mentor-led doubt sessions',
+  'Project-first pedagogy for portfolio and real-world experience',
+  'Interview training for DSA, system design, and behavior rounds',
+  'Career support for internships, jobs, and freelancing',
+  'Weekly progress tracking with personalized feedback',
 ];
 
 const stats = [
-  { icon: Users, value: '500+', label: 'Enterprise Clients', color: 'text-blue-400' },
-  { icon: Award, value: '12+', label: 'Years of Excellence', color: 'text-brand-yellow' },
-  { icon: Zap, value: '2,000+', label: 'Projects Delivered', color: 'text-green-400' },
+  { icon: Users, value: '2,500+', label: 'Learners Guided', color: 'text-blue-600' },
+  { icon: BookOpen, value: '40+', label: 'CS Modules', color: 'text-brand-primary' },
+  { icon: Rocket, value: '300+', label: 'Projects Built', color: 'text-green-600' },
+];
+
+const csDomains = [
+  { icon: CircuitBoard, title: 'Digital Electronics & Circuits', text: 'Boolean logic, gates, combinational/sequential circuits, and architecture basics.' },
+  { icon: Cpu, title: 'Computer Architecture', text: 'Processors, memory hierarchy, instruction pipelines, and low-level optimization thinking.' },
+  { icon: Binary, title: 'Algorithms & Computation', text: 'Complexity analysis, recursion, graph algorithms, dynamic programming, and proofs.' },
+  { icon: Database, title: 'Databases & Data Systems', text: 'SQL/NoSQL, indexing, transactions, modeling, and distributed data fundamentals.' },
+  { icon: Shield, title: 'Cybersecurity', text: 'Network security, secure coding, cryptography basics, and vulnerability awareness.' },
+  { icon: Globe, title: 'Networks & Cloud', text: 'Protocols, backend communication, deployment pipelines, and cloud-native services.' },
 ];
 
 export default function About() {
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
-      {/* White background section */}
-      <div className="absolute inset-0 bg-white" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(251,191,36,0.08),transparent_60%)]" />
-
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Left - Visual */}
-          <div className="relative">
-            <div className="relative z-10">
-              {/* Main image card */}
-              <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-                <div className="aspect-[4/3] bg-gradient-to-br from-gray-900 to-gray-800 p-10 flex flex-col justify-between relative">
-                  {/* Grid overlay */}
-                  <div className="absolute inset-0 bg-grid opacity-30" />
-                  
-                  <div className="relative">
-                    <div className="text-brand-yellow font-heading font-bold text-6xl">12+</div>
-                    <div className="text-white/60 text-sm mt-1">Years of Innovation</div>
-                  </div>
-                  
-                  <div className="relative grid grid-cols-3 gap-4">
-                    {stats.map((stat) => (
-                      <div key={stat.label} className="bg-white/5 backdrop-blur-sm rounded-xl p-3 border border-white/10">
-                        <stat.icon className={`w-5 h-5 ${stat.color} mb-2`} />
-                        <div className="text-white font-heading font-bold text-lg">{stat.value}</div>
-                        <div className="text-white/40 text-xs">{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating accent card */}
-              <div className="absolute -bottom-6 -right-6 bg-brand-yellow rounded-2xl p-6 shadow-xl shadow-yellow-500/20">
-                <div className="font-heading font-bold text-3xl text-brand-black">150+</div>
-                <div className="text-brand-black/70 text-sm font-medium">IT Experts</div>
-              </div>
+    <div id="about" className="relative pt-32 bg-white">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(251,191,36,0.08),transparent_60%)]" />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-50 mb-6">
+              <span className="text-sm font-medium text-brand-primary">About ExpertLance</span>
             </div>
-
-            {/* Background decoration */}
-            <div className="absolute -top-8 -left-8 w-32 h-32 border-2 border-brand-yellow/20 rounded-3xl" />
-          </div>
-
-          {/* Right - Content */}
-          <div className="space-y-8">
-            <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-500/20 bg-yellow-50 mb-6">
-                <span className="text-sm font-medium text-brand-yellow-dark">About ExpertLance</span>
-              </div>
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Your Trusted Partner in
-                <br />
-                <span className="text-brand-yellow-dark">Digital Transformation</span>
-              </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Since 2012, ExpertLance has been at the forefront of IT innovation. We combine deep technical
-                expertise with strategic thinking to deliver solutions that don't just solve problems — they
-                create competitive advantages.
-              </p>
-            </div>
-
-            {/* Highlights */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              {highlights.map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-brand-yellow flex-shrink-0" />
-                  <span className="text-gray-700 text-sm font-medium">{item}</span>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-brand-black text-white font-heading font-semibold rounded-full hover:bg-gray-800 hover:scale-105 transition-all duration-300"
-            >
-              Discover Our Story
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-brand-ink leading-tight">
+              Complete Computer Science Learning
+              <br />
+              <span className="text-gradient-light">From Circuits to Code to Cyber</span>
+            </h1>
+            <p className="text-brand-muted text-lg mt-6 leading-relaxed">
+              We are a practical CS and programming academy designed for learners who want industry-level fundamentals, real project experience, and strong career outcomes.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid sm:grid-cols-3 gap-6">
+            {stats.map((stat) => (
+              <div key={stat.label} className="bg-brand-surface border border-brand-line rounded-2xl p-6">
+                <stat.icon className={`w-6 h-6 ${stat.color} mb-3`} />
+                <div className="text-3xl font-heading font-bold text-brand-ink">{stat.value}</div>
+                <div className="text-brand-muted text-sm mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 bg-brand-surface border-y border-brand-line/70">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="font-heading text-3xl font-bold text-brand-ink mb-8">What Makes Our Training Effective</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {highlights.map((item) => (
+              <div key={item} className="bg-white border border-brand-line rounded-xl p-4 flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-brand-primary flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-brand-muted">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="font-heading text-3xl font-bold text-brand-ink mb-8">6 Core Sections of Computer Science</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {csDomains.map((domain) => (
+              <div key={domain.title} className="bg-white border border-brand-line rounded-xl p-5 hover:shadow-sm transition-all duration-300">
+                <div className="flex items-center gap-2 mb-2">
+                  <domain.icon className="w-4 h-4 text-brand-primary" />
+                  <h4 className="font-semibold text-brand-ink text-sm">{domain.title}</h4>
+                </div>
+                <p className="text-sm text-brand-muted leading-relaxed">{domain.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 bg-brand-surface border-y border-brand-line/70">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="font-heading text-3xl font-bold text-brand-ink mb-8">From Theory to Real Engineering</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4 text-brand-muted">
+              <p>Every module combines conceptual understanding with practical implementation. Students write code daily, review peer solutions, and debug real scenarios.</p>
+              <p>We include architecture thinking, software lifecycle skills, version control discipline, and secure coding practices so learners can perform like professional developers.</p>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-brand-line bg-gradient-to-br from-slate-900 to-slate-700 p-8">
+              <div className="text-brand-yellow text-sm mb-3">Learning Pipeline</div>
+              <div className="space-y-3 text-white text-sm">
+                <div className="bg-white/10 rounded-lg px-3 py-2">Foundations: Logic, Math, Data Representation</div>
+                <div className="bg-white/10 rounded-lg px-3 py-2">Build: DSA, Web, Backend, Databases</div>
+                <div className="bg-white/10 rounded-lg px-3 py-2">Advance: System Design, Cyber, Cloud, AI</div>
+                <div className="bg-white/10 rounded-lg px-3 py-2">Career: Interviews, Resume, Portfolio, Communication</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="font-heading text-4xl font-bold text-brand-ink mb-4">Start Your CS Journey with Us</h2>
+          <p className="text-brand-muted text-lg mb-8">Get a personalized roadmap and begin your path from beginner to software engineer.</p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-brand-yellow text-brand-black font-heading font-semibold rounded-full hover:bg-brand-yellow-dark hover:scale-105 transition-all duration-300"
+          >
+            Contact Admissions
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }

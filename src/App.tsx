@@ -1,26 +1,29 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import Process from './components/Process';
-import Portfolio from './components/Portfolio';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import LoadingScreen from './components/LoadingScreen';
+import ScrollToTop from './components/ScrollToTop';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import ProjectsPage from './pages/ProjectsPage';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    return <LoadingScreen onComplete={() => setLoading(false)} durationMs={2000} />;
+  }
+
   return (
-    <div className="min-h-screen bg-brand-black text-white overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <Process />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <ScrollToTop />
+      <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/projects" element={<ProjectsPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </>
   );
 }
 
