@@ -2,7 +2,7 @@
   "name": "placeholder-model-2",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://auqamas.github.io//Expert-Lance",
+  "homepage": "https://auqamas.github.io//ExpertLance",
   "type": "module",
   "scripts": {
     "dev": "vite",
