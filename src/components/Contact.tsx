@@ -49,7 +49,7 @@ export default function Contact() {
     setError('');
 
     if (!formData.name || !formData.email || !formData.message) {
-      setError('Please fill your name, email, and message.');
+      setError('Please fill your name, email, and message');
       return;
     }
 
